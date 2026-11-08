@@ -1,0 +1,191 @@
+
+
+html body .opticab-site-root .oc-real .oc-rh-cards .oc-rh-hot {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html body .opticab-site-root .oc-real .oc-rh-cards .oc-rh-hot:not(.nav) {
+  z-index: 3;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 12px !important;
+  outline: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  cursor: pointer;
+  transform-origin: 50% 50%;
+  transition: transform 480ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+html body .opticab-site-root .oc-real .oc-rh-cards .oc-rh-hot:not(.nav):hover,
+html body .opticab-site-root .oc-real .oc-rh-cards .oc-rh-hot:not(.nav):focus-visible {
+  z-index: 9;
+  transform: scale(1.08) !important;
+}
+
+html body .opticab-site-root .oc-real .oc-rh-cards .oc-rh-hot:not(.nav):active {
+  transform: scale(1.025) !important;
+}
+
+/* The fifth column is rearranged only once the HD patch image is active.
+   Keep the hotspots on their original cards while the base image is showing. */
+html body .opticab-site-root:not(#ocz) .oc-real:not(:has(img[data-t="1"].on)) .oc-rh-cards .oc-rh-hot[aria-label^="Call Captain"] {
+  display: block !important;
+}
+
+html body .opticab-site-root:not(#ocz) .oc-real:not(:has(img[data-t="1"].on)) .oc-rh-cards .oc-rh-hot[aria-label^="Web and Mobile Booker"] {
+  left: 82.75% !important;
+}
+
+html body .opticab-site-root:not(#ocz) .oc-real:not(:has(img[data-t="1"].on)) .oc-rh-cards .oc-rh-hot[aria-label^="Review Rocket"] {
+  top: 53.2781% !important;
+}
+
+html body .opticab-site-root:not(#ocz) .oc-real:not(:has(img[data-t="1"].on)) .oc-rh-cards .oc-rh-hot[aria-label^="Customer Emails"] {
+  top: 75.9033% !important;
+}
+
+.ocfx-hot-crop {
+  position: absolute;
+  inset: 0;
+  display: block;
+  z-index: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  background-color: transparent;
+  background-image: var(--ocfx-card-image, none);
+  background-repeat: no-repeat;
+  background-size: var(--ocfx-card-size, 100% auto);
+  background-position: var(--ocfx-card-position, 0 0);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 90ms linear 360ms;
+}
+
+html body .opticab-site-root .oc-real .oc-rh-cards .oc-rh-hot:not(.nav):hover .ocfx-hot-crop[data-ready="1"],
+html body .opticab-site-root .oc-real .oc-rh-cards .oc-rh-hot:not(.nav):focus-visible .ocfx-hot-crop[data-ready="1"] {
+  opacity: 1;
+  transition-delay: 0ms;
+}
+
+.ocfx-hot-frame {
+  position: absolute;
+  inset: 0;
+  display: block;
+  z-index: 1;
+  overflow: hidden;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background-color: transparent;
+  box-shadow: 0 0 0 0 rgba(111, 239, 164, 0);
+  pointer-events: none;
+  transition:
+    border-color 100ms ease,
+    background-color 120ms ease,
+    box-shadow 150ms ease;
+}
+
+html body .opticab-site-root .oc-real .oc-rh-cards .oc-rh-hot:not(.nav):not(:hover):not(:focus-visible) .ocfx-hot-frame {
+  border-color: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  transition: none !important;
+}
+
+.ocfx-hot-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  opacity: 0;
+  background: linear-gradient(118deg, rgba(255, 255, 255, 0.34) 0%, rgba(255, 255, 255, 0.04) 37%, transparent 64%);
+  transform: translateX(-22%);
+  transition: opacity 250ms ease, transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ocfx-hot-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+html body .opticab-site-root .oc-real .oc-rh-cards .oc-rh-hot:not(.nav):hover .ocfx-hot-frame,
+html body .opticab-site-root .oc-real .oc-rh-cards .oc-rh-hot:not(.nav):focus-visible .ocfx-hot-frame {
+  border-color: #67e99b;
+  background-color: rgba(192, 255, 215, 0.06);
+  box-shadow:
+    0 0 0 1px rgba(103, 233, 155, 0.45),
+    0 14px 30px rgba(6, 31, 20, 0.14),
+    0 0 20px rgba(0, 204, 119, 0.1);
+  transition:
+    border-color 140ms ease 20ms,
+    background-color 160ms ease 20ms,
+    box-shadow 180ms ease 20ms;
+}
+
+html body .opticab-site-root .oc-real .oc-rh-cards .oc-rh-hot:not(.nav):hover .ocfx-hot-frame::before,
+html body .opticab-site-root .oc-real .oc-rh-cards .oc-rh-hot:not(.nav):focus-visible .ocfx-hot-frame::before {
+  opacity: 1;
+  transform: translateX(18%);
+}
+
+html body .opticab-site-root .oc-real .oc-rh-cards .oc-rh-hot:not(.nav):focus-visible .ocfx-hot-frame {
+  outline: 1px solid #67e99b;
+  outline-offset: 2px;
+}
+
+html body .opticab-site-root .oc-real .oc-rh-cards .oc-rh-hot.ocfx-hot-press {
+  animation: ocfxHotPress 540ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ocfx-hot-ripple {
+  position: absolute;
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(116, 240, 165, 0.38) 0%, rgba(116, 240, 165, 0.14) 42%, transparent 72%);
+  transform: translate(-50%, -50%) scale(0);
+  animation: ocfxHotRipple 620ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Respected by browsers and useful if the card is focused by keyboard. */
+@keyframes ocfxHotPress {
+  0% { transform: scale(1.08); }
+  26% { transform: scale(1.015); }
+  58% { transform: scale(1.09); }
+  100% { transform: scale(1.08); }
+}
+
+@keyframes ocfxHotRipple {
+  to {
+    transform: translate(-50%, -50%) scale(20);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html body .opticab-site-root .oc-real .oc-rh-cards .oc-rh-hot:not(.nav) {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  html body .opticab-site-root .oc-real .oc-rh-cards .oc-rh-hot:not(.nav):hover,
+  html body .opticab-site-root .oc-real .oc-rh-cards .oc-rh-hot:not(.nav):focus-visible,
+  html body .opticab-site-root .oc-real .oc-rh-cards .oc-rh-hot:not(.nav):active {
+    transform: none !important;
+  }
+
+  .ocfx-hot-frame,
+  .ocfx-hot-frame::before,
+  .ocfx-hot-ripple {
+    transition: none !important;
+    animation: none !important;
+  }
+}
